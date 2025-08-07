@@ -1,0 +1,223 @@
+/* RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background: white;
+  color: hsl(278, 68%, 11%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+main {
+  display: flex;
+  gap: 4rem;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* ==== CARD DISPLAY SECTION ==== */
+.card-display {
+  flex: 1;
+  min-width: 350px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.card-front,
+.card-back {
+  position: relative;
+}
+
+.card-front img,
+.card-back img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Card text overlays */
+.card-details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
+  padding: 2rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-number {
+  font-size: 1.4rem;
+  letter-spacing: 2.5px;
+  margin-top: 4rem;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.card-cvc {
+  position: absolute;
+  right: 2.5rem;
+  top: 6rem;
+  color: rgb(194, 174, 174);
+  font-size: 0.9rem;
+}
+
+/* ==== FORM SECTION ==== */
+.form-section {
+  flex: 1;
+  min-width: 320px;
+}
+
+.card-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: white;
+  padding: 1rem 0;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+input {
+  padding: 0.75rem;
+  border: 1px solid hsl(270, 3%, 87%);
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+input:focus {
+  border-color: hsl(278, 68%, 11%);
+}
+
+.input-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.expiry-fields {
+  display: flex;
+  gap: 0.5rem;
+}
+
+button.submit-btn {
+  background-color: hsl(278, 68%, 11%);
+  color: white;
+  padding: 0.9rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button.submit-btn:hover {
+  background-color: hsl(278, 68%, 15%);
+}
+
+/* ==== THANK YOU STATE ==== */
+.thank-you {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 3rem;
+  gap: 1.5rem;
+}
+
+.thank-you img {
+  width: 60px;
+}
+
+.thank-you h2 {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+
+.thank-you p {
+  color: hsl(279, 6%, 55%);
+  font-size: 1rem;
+}
+
+.thank-you button {
+  background-color: hsl(278, 68%, 11%);
+  color: white;
+  border: none;
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* ==== ERROR MESSAGES ==== */
+.error {
+  color: red;
+  font-size: 0.7rem;
+  padding-top: 0.25rem;
+  height: 0.75rem;
+}
+
+/* ==== HIDDEN CLASS ==== */
+.hidden {
+  display: none;
+}
+
+/* ==== RESPONSIVENESS ==== */
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .card-display {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .card-number {
+    font-size: 1.2rem;
+    margin-top: 2.5rem;
+  }
+
+  .card-cvc {
+    top: 5.3rem;
+    font-size: 0.8rem;
+  }
+
+  .card-bottom {
+    font-size: 0.65rem;
+  }
+}

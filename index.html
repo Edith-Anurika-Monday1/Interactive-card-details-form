@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Interactive Card Details Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="images/favicon-32x32.png" />
+  </head>
+  <body>
+    <main>
+      <section class="card-display">
+        <div class="card-front">
+          <img src="images/bg-card-front.png" alt="Card Front" class="card-img" />
+          <div class="card-details">
+            <span class="card-number" id="display-card-number">1234 5678 9101 2345</span>
+            <div class="card-bottom">
+              <span class="card-name" id="display-name">EDITH ANURIKA MONDAY</span>
+              <span class="card-expiry" id="display-expiry">12/25</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-back">
+          <img src="images/bg-card-back.png" alt="Card Back" class="card-img" />
+          <span class="card-cvc" id="display-cvc">001</span>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <form id="card-form" class="card-form">
+          <label>
+            Cardholder Name
+            <input type="text" id="cardholder-name" placeholder="e.g. EDITH ANURIKA MONDAY" required />
+            <span class="error" id="name-error"></span>
+          </label>
+
+          <label>
+            Card Number
+            <input type="text" id="card-number" placeholder="e.g. 1234 5678 9101 2345" maxlength="19" required />
+            <span class="error" id="number-error"></span>
+          </label>
+
+          <div class="input-row">
+            <label>
+              Exp. Date (MM/YY)
+              <div class="expiry-fields">
+                <input type="text" id="exp-month" placeholder="MM" maxlength="2" required />
+                <input type="text" id="exp-year" placeholder="YY" maxlength="2" required />
+              </div>
+              <span class="error" id="date-error"></span>
+            </label>
+
+            <label>
+              CVV
+              <input type="text" id="cvc" placeholder="e.g. 001" maxlength="3" required />
+              <span class="error" id="cvc-error"></span>
+            </label>
+          </div>
+
+          <button type="submit" class="submit-btn">Confirm</button>
+        </form>
+
+        <div class="thank-you hidden" id="thank-you">
+          <img src="images/icon-complete.svg" alt="Complete Icon" />
+          <h2>Thank You!</h2>
+          <p>We've added your card details</p>
+          <button id="continue-btn">Continue</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
